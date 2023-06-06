@@ -12,8 +12,15 @@
     border-bottom: 15px solid rgb(35, 160, 35);
     margin: 0 auto;
     position: relative;
-    overflow: hidden;
+    overflow: hidden;  
 }
+
+.game-board .span{
+    font-size: 50px;
+    position: absolute;
+    left: 35;
+    top: 20;
+} 
 
 .pipe{
     width: 80px;
@@ -33,6 +40,23 @@
     width: 500px;
     position: absolute;
     animation: clouds-scroll 20s linear infinite;
+}
+
+.coin{
+    width: 50px;
+    position: absolute;
+    left: 30px;
+    top: 20px;
+}
+
+.score{
+    font-family:'Press Start 2P', cursive;
+    position: absolute; 
+    font-size: 40px; 
+    top: 30px; 
+    left: 100px;
+    color: #e6bc53;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
 
 .mario-jump{

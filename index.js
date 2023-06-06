@@ -4,7 +4,9 @@ const cloud = document.querySelector('.clouds');
 const mario_jump_sound = new Audio('sounds/Mario-Jump-Sound.mp3');
 const mario_game_over = new Audio('sounds/Mario-Game-Over.mp3');
 const mario_theme = new Audio('sounds/Super-Mario-Theme.mp3');
+const score = document.querySelector('.score');
 
+let score_game = 0;
 let gameLost = false; // Variável de controle para verificar se o jogo foi perdido
 
 mario_jump_sound.volume = 0.2;
@@ -44,7 +46,15 @@ const loop = setInterval(() => {
       }
     }
     else{
+      score.textContent = parseInt(score_game);
       mario_theme.play();
+      score_game += 0.1;
+      if(score_game > 50 && score_game < 150){
+        pipe.style.animationDuration = `${1.8}s`;
+      }
+      else if(score_game > 150 && score_game < 500){
+        pipe.style.animationDuration = `${1.6}s`;
+      }
     }
 }, 10);
 
