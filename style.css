@@ -36,17 +36,36 @@
     
 }
 
+.crouched-mario{
+    width: 90px !important;
+    bottom: 0 !important;
+    position: absolute !important;
+    left: 20px;
+}
+
+.kamek{
+    width: 200px;
+    bottom: 40px;
+    position: absolute;
+    animation: kamek_scroll 5s linear infinite;
+}
+
 .clouds{
     width: 500px;
     position: absolute;
     animation: clouds-scroll 20s linear infinite;
 }
 
-.coin{
+.coin-score{
     width: 50px;
     position: absolute;
     left: 30px;
     top: 20px;
+}
+
+.golden-coin{
+    width: 0;
+    position: absolute;
 }
 
 .score{
@@ -61,6 +80,15 @@
 
 .mario-jump{
     animation: mario-jump 500ms ease-out;
+}
+
+@keyframes kamek_scroll {
+    from{
+        right: -200px;
+    }
+    to{
+        right: 100%;
+    }
 }
 
 @keyframes pipe-scroll {
