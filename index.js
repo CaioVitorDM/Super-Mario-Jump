@@ -77,7 +77,7 @@ const loop = setInterval(() => {
         clearInterval(loop);
       }
     }
-    else if(kamekPosition <= 80 && marioPosition > 40 && kamekPosition > 0){
+    else if(kamekPosition <= 80 && (marioPosition > 40 || !isCrouched) && kamekPosition > 0){
       if(!gameLost){
         gameLost = true; // Define a variável de controle como true para indicar que o jogo foi perdido
         pipe.style.animation = 'none';
