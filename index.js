@@ -101,7 +101,7 @@ const loop = setInterval(() => {
         clearInterval(loop);
       }
     }
-    else if(score_game > 999){
+    else if(score_game >= 999){
       if(!gameLost){
         gameWin = true;
         pipe.style.animation = 'none';
@@ -109,13 +109,15 @@ const loop = setInterval(() => {
 
         cloud.style.animation = 'none';
         cloud.style.left = '100%';
-
-        mario.style.animation = 'none';
-        mario.style.bottom = '0';
-        mario.src = 'images/mario-victory.png';
-        mario.style.width = '75px';
-        mario.style.left = '50%';
-
+        mario.classList.add('mario-winning');
+        setTimeout(() =>{
+          mario.style.animation = 'none';
+          mario.style.bottom = '0';
+          mario.src = 'images/mario-victory.png';
+          mario.style.width = '75px';
+          mario.style.left = '50%';
+        }, 3000)
+        
         golden_coin.style.left = '49%';
         golden_coin.style.width = '100px';
         golden_coin.style.top = '200px';
@@ -131,12 +133,18 @@ const loop = setInterval(() => {
     else{
       score.textContent = parseInt(score_game);
       mario_theme.play();
-      score_game += 0.02;
+      score_game += 0.03;
       if(score_game > 50 && score_game < 150){
         pipe.style.animationDuration = `${1.8}s`;
+        score_game += 0.01
       }
       else if(score_game > 150 && score_game < 500){
         pipe.style.animationDuration = `${1.6}s`;
+        score_game += 0.02
+      }
+      else if(score_game > 500 && score_game < 999){
+        pipe.style.animationDuration = `${1.6}s`;
+        score_game += 0.07
       }
     }
 }, 10);
@@ -160,11 +168,5 @@ document.addEventListener('keyup', function(event) {
     if(!gameLost && !gameWin){
     standUp();
   }
-  }
-});
-
-document.addEventListener('click', () => {
-  if(!gameLost && !gameWin){
-    jump();
   }
 });

@@ -82,6 +82,10 @@
     animation: mario-jump 500ms ease-out;
 }
 
+.mario-winning{
+    animation: mario-winning 3s ease-out;
+}
+
 @keyframes kamek_scroll {
     from{
         right: -200px;
@@ -106,6 +110,15 @@
     }
     to{
         right: 100%;
+    }
+}
+
+@keyframes mario-winning {
+    from{
+        left: 0;
+    }
+    to{
+        left: 49%;
     }
 }
 
